@@ -6,11 +6,13 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
+      args:
+        REACT_APP_SERVER_URL: http://localhost:8080 # This value will be used during local Docker build
     container_name: client
     ports:
       - "3000:3000"
     env_file:
-      - ./client/.env
+      - ./client/.env # Keep this for other local client-side environment variables if any
     stdin_open: true
     tty: true
     networks:
