@@ -1,0 +1,40 @@
+const Router = require("express");
+const router = new Router();
+
+const roomRouter = require("./roomRouter");
+const shelvingRouter = require("./shelvingRouter");
+const shelfRouter = require("./shelfRouter");
+const plantRouter = require("./plantRouter");
+const parameterRouter = require("./parameterRouter");
+const parameterTypeRouter = require("./parameterTypeRouter");
+const parameterSettingRouter = require("./parameterSettingRouter");
+const parameterValueRouter = require("./parameterValueRouter");
+const parameterSettingRatingRouter = require("./parameterSettingRatingRouter");
+const parameterSettingRangeRouter = require("./parameterSettingRangeRouter");
+const rangeRouter = require("./rangeRouter");
+const rangeValueRouter = require("./rangeValueRouter");
+const stationarySequenceRouter = require("./stationarySequenceRouter");
+const dynamicRangeRouter = require("./dynamicRangeRouter");
+const databaseRouter = require("./databaseRouter");
+const surveyRouter = require("./surveyRouter");
+const socket = require("./socket");
+
+router.use("/", socket);
+router.use("/room", roomRouter);
+router.use("/shelving", shelvingRouter);
+router.use("/shelf", shelfRouter);
+router.use("/plant", plantRouter);
+router.use("/parameter", parameterRouter);
+router.use("/parameter-type", parameterTypeRouter);
+router.use("/parameter-setting", parameterSettingRouter);
+router.use("/parameter-value", parameterValueRouter);
+router.use("/parameter-setting-rating", parameterSettingRatingRouter);
+router.use("/parameter-setting-range", parameterSettingRangeRouter);
+router.use("/range", rangeRouter);
+router.use("/range-value", rangeValueRouter);
+router.use("/stationary-sequence", stationarySequenceRouter);
+router.use("/dynamic-range", dynamicRangeRouter);
+router.use("/db", databaseRouter);
+router.use("/survey", surveyRouter);
+
+module.exports = router;
